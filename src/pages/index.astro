@@ -1,12 +1,22 @@
 ---
+import About from '../components/About.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="mouro.dev | Desenvolvedor front-end">
-	<div class="container mx-auto max-w-4xl">
+<Layout title="mouro.dev - Desenvolvedor front-end">
+	<div class="grid h-screen grid-rows-[auto_1fr_auto] gap-4">
+		<header class="mb-8 mt-4">
+			<div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+				<About />
+			</div>
+		</header>
+
 		<main>
-			<h1>mouro.dev</h1>
-			<p class="rounded-xl border border-red-500 p-4">Desenvolvedor front-end</p>
+			<h3>Main</h3>
 		</main>
+
+		<footer>
+			<h3>Footer</h3>
+		</footer>
 	</div>
 </Layout>
