@@ -4,19 +4,20 @@ import Card from '../components/Card.astro'
 import Project from '../components/Project.astro'
 import Subtitle from '../components/Subtitle.astro'
 import Layout from '../layouts/Layout.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout title="mouro.dev - Desenvolvedor front-end">
 	<div class="grid h-screen grid-rows-[auto_1fr_auto] gap-4">
-		<header class="mb-8 mt-4">
+		<header class="mb-8 mt-4" role="banner">
 			<div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 				<About />
 			</div>
 		</header>
 
-		<main>
+		<main role="main">
 			<div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-				<section>
+				<!-- <section>
 					<div class="space-y-8">
 						<Subtitle title="Serviços Oferecidos" />
 						<div class="space-y-4">
@@ -25,7 +26,7 @@ import Layout from '../layouts/Layout.astro'
 							<Card text="Otimização de Performance e SEO Básico" />
 						</div>
 					</div>
-				</section>
+				</section> -->
 
 				<section class="mt-12">
 					<div class="space-y-8">
@@ -55,8 +56,10 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 		</main>
 
-		<footer>
-			<h3>Footer</h3>
+		<footer role="contentinfo">
+			<div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+				<Footer />
+			</div>
 		</footer>
-	</div>
-</Layout>
+	</div></Layout
+>
