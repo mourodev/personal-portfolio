@@ -16,18 +16,42 @@ import { Icon } from 'astro-icon/components'
 					<div class="space-y-4">
 						<div class="mb-4 flex items-center justify-between">
 							<h1 class="text-3xl font-bold text-zinc-50">Sobre mim</h1>
-							<a href="/" class="flex items-center gap-2 hover:text-amber-500">
+							<a
+								href="/"
+								class="flex items-center gap-2 rounded-md p-2 transition-colors duration-200 hover:bg-amber-500/10 hover:text-amber-500"
+							>
 								<Icon name="back" /> Voltar
 							</a>
 						</div>
 						<Subtitle title="Olá! Eu sou o Rodrigo Luiz, mas na web, sou conhecido como mouro." />
-						<p class="text-zinc-400">
-							Moro no <span class="text-amber-500">Rio de Janeiro</span> e me formei em <span
-								class="text-amber-500">Análise e Desenvolvimento de Sistemas</span
-							> pelo Centro Universitário Augusto Motta (UNISUAM). Fundada em 1969 e com sede em Bonsucesso,
-							a UNISUAM é uma das instituições tradicionais daqui, com unidades espalhadas por Campo
-							Grande, Bangu e Jacarepaguá.
-						</p>
+						<div class="grid gap-8 md:grid-cols-[1fr_auto]">
+							<div class="space-y-4">
+								<p>
+									Moro no <span class="text-amber-500">Rio de Janeiro</span> e me formei em <span
+										class="text-amber-500">Análise e Desenvolvimento de Sistemas</span
+									> pelo Centro Universitário Augusto Motta (UNISUAM). Fundada em 1969 e com sede em
+									Bonsucesso, a UNISUAM é uma das instituições tradicionais daqui, com unidades espalhadas
+									por Campo Grande, Bangu e Jacarepaguá.
+								</p>
+								<p>
+									Ao longo da minha jornada, explorei diferentes áreas da tecnologia, incluindo <span
+										class="text-amber-500">backend</span
+									>, <span class="text-amber-500">mobile</span> e até <span class="text-amber-500"
+										>desenvolvimento de jogos</span
+									>. Mas foi no <span class="font-bold text-amber-500">frontend</span> que realmente
+									me encontrei. Gosto de ver as cores, animações e interações ganhando vida na tela,
+									transformando linhas de código em experiências visuais.
+								</p>
+							</div>
+							<Image
+								src={profileImage}
+								alt="Foto de Desenvolvedor Front-End Mouro"
+								class="rounded-md"
+								format="avif"
+								loading="eager"
+								width={300}
+							/>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -35,57 +59,34 @@ import { Icon } from 'astro-icon/components'
 
 		<main>
 			<div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-				<section class="grid gap-8 md:grid-cols-2">
-					<div class="space-y-4">
-						<p class="text-zinc-400">
-							Ao longo da minha jornada, explorei diferentes áreas da tecnologia, incluindo <span
-								class="text-amber-500">backend</span
-							>, <span class="text-amber-500">mobile</span> e até <span class="text-amber-500"
-								>desenvolvimento de jogos</span
-							>. Mas foi no <span class="font-bold text-amber-500">frontend</span> que realmente me encontrei.
-							Gosto de ver as cores, animações e interações ganhando vida na tela, transformando linhas
-							de código em experiências visuais.
-						</p>
+				<section class="space-y-4">
+					<p>
+						Para mim, a base de tudo está no <span class="text-amber-500"
+							>HTML, CSS e JavaScript</span
+						>. Essas são as ferramentas que uso para construir interfaces e experiências, e sempre
+						estou aprimorando minhas habilidades nessas tecnologias.
+					</p>
 
-						<p class="text-zinc-400">
-							Para mim, a base de tudo está no <span class="text-amber-500"
-								>HTML, CSS e JavaScript</span
-							>. Essas são as ferramentas que uso para construir interfaces e experiências, e sempre
-							estou aprimorando minhas habilidades nessas tecnologias.
-						</p>
-
-						<p class="text-zinc-400">
-							Hoje, <span class="font-bold text-amber-500">mouro</span> é a minha marca na web, e estou
-							aqui para trazer uma visão moderna, funcional e simples para o desenvolvimento web.
-						</p>
-					</div>
-
-					<Image
-						src={profileImage}
-						alt="Foto de Desenvolvedor Front-End Mouro"
-						class="rounded-md"
-						format="avif"
-						loading="eager"
-						width={300}
-					/>
+					<p>
+						Hoje, <span class="font-bold text-amber-500">mouro</span> é a minha marca na web, e estou
+						aqui para trazer uma visão moderna, funcional e simples para o desenvolvimento web.
+					</p>
 				</section>
 
 				<section class="mt-12">
 					<Subtitle title="Tem alguma dúvida?" />
-					<p class="text-zinc-400">
-						Estou sempre animado para colaborar em projetos inovadores e emocionantes!
-					</p>
+					<p>Estou sempre animado para colaborar em projetos inovadores e emocionantes!</p>
 					<div class="mt-4 flex flex-wrap gap-4 sm:gap-8">
 						<a
 							href="mailto:mourodev@gmail.com"
-							class="hover: flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-zinc-50"
+							class="hover: flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-zinc-50 transition-colors duration-200 hover:bg-amber-500/10 hover:text-amber-500"
 						>
 							Me mande um e-mail <Icon name="mail" />
 						</a>
 						<a
 							href="https://wa.me/5521992802319"
 							target="_blank"
-							class="flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-zinc-50 hover:underline"
+							class="flex items-center gap-2 rounded-md bg-zinc-800 p-2 px-4 py-2 text-zinc-50 transition-colors duration-200 hover:bg-amber-500/10 hover:text-amber-500"
 						>
 							Me mande uma mensagem <Icon name="chat" />
 						</a>

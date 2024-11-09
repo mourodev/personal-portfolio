@@ -4,19 +4,36 @@ type Props = {
 	title: string
 	body: string
 	href: string
+	isInDevelopment?: boolean // Propriedade opcional para controlar o estado de "Em desenvolvimento"
 }
 
-const { title, body, href } = Astro.props
+const { title, body, href, isInDevelopment = false } = Astro.props
 ---
 
 <a
 	href={href}
 	target="_blank"
-	class="flex items-center justify-between gap-2 rounded-md bg-zinc-800 p-4 hover:bg-amber-500/10"
+	class="grid gap-2 rounded-md bg-zinc-800 p-4 transition duration-300 hover:bg-amber-500/10 sm:grid-cols-[1fr_auto]"
 >
 	<div class="flex items-baseline gap-4">
 		<h3 class="text-base font-semibold text-zinc-50">{title}</h3>
 		<p class="text-sm text-zinc-400">{body}</p>
 	</div>
-	<Icon name="outward" />
+
+	<!-- Condicional para exibir o indicador de "Em desenvolvimento" com animação ping -->
+	<div class="flex items-center gap-2">
+		{
+			isInDevelopment && (
+				<div class="flex items-center gap-1 text-sm text-amber-500">
+					<span class="relative flex h-3 w-3">
+						<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75" />
+						<span class="relative inline-flex h-3 w-3 rounded-full bg-amber-500" />
+					</span>
+					<span>Em desenvolvimento</span>
+				</div>
+			)
+		}
+
+		<Icon name="outward" />
+	</div>
 </a>
