@@ -1,57 +1,80 @@
 ---
+import { Icon } from 'astro-icon/components'
 
+const name = 'Mouro'
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Tailwind']
+const socialLinks = [
+	{ name: 'Sobre mim', href: '/about', ariaLabel: 'Sobre mim' },
+	{
+		name: 'GitHub',
+		href: 'https://github.com/mourodev',
+		ariaLabel: 'GitHub',
+		icon: 'github',
+		target: '_blank'
+	},
+	{
+		name: 'WhatsApp',
+		href: 'https://wa.me/5521992802319',
+		ariaLabel: 'WhatsApp',
+		icon: 'whatsapp',
+		target: '_blank'
+	},
+	{
+		name: 'Bluesky',
+		href: 'https://bsky.app/profile/moouro.bsky.social',
+		ariaLabel: 'Bluesky',
+		icon: 'bluesky',
+		target: '_blank'
+	},
+	{
+		name: 'LinkedIn',
+		href: 'https://www.linkedin.com/in/moouro/',
+		ariaLabel: 'LinkedIn',
+		icon: 'linkedin',
+		target: '_blank'
+	}
+]
 ---
 
-<div class="max-w-2xl space-y-4 text-base md:text-lg">
-	<h1 class="text-3xl font-bold text-zinc-50">Olá, eu sou o Mouro 👋🏿</h1>
+<div class="max-w-2xl space-y-4">
+	<h1 class="text-3xl font-bold text-zinc-50">Olá, eu sou o {name} 👋🏿</h1>
 	<div class="space-y-2">
 		<p>
-			Sou um desenvolvedor web com três anos de experiência prática e uma paixão por aprender e
-			criar experiências digitais modernas.
+			Sou um desenvolvedor web com dois anos de experiência e uma paixão por aprender e criar
+			experiências digitais modernas.
 		</p>
 		<p>
 			Atualmente tenho trabalhado com <span class="font-semibold text-amber-500"
-				>HTML, CSS, JavaScript, React, Astro, Tailwind</span
+				>{skills.join(', ')}</span
 			>.
 		</p>
 		<p>Sinta-se à vontade para entrar em contato se quiser trabalhar comigo!</p>
 	</div>
 
-	<ul role="list" class="flex flex-wrap gap-4 text-sm">
-		<li>
-			<a href="/about" class="transition-colors duration-200 hover:text-amber-500">Sobre mim</a>
-		</li>
-		<li>
-			<a
-				href="https://github.com/mourodev"
-				target="_blank"
-				class="transition-colors duration-200 hover:text-amber-500"
-				aria-label="GitHub">GitHub</a
-			>
-		</li>
-		<li>
-			<a
-				href="https://wa.me/5521992802319"
-				class="transition-colors duration-200 hover:text-amber-500"
-				target="_blank"
-				aria-label="WhatsApp">WhatsApp</a
-			>
-		</li>
-		<li>
-			<a
-				href="https://bsky.app/profile/moouro.bsky.social"
-				target="_blank"
-				class="transition-colors duration-200 hover:text-amber-500"
-				aria-label="Bluesky">Bluesky</a
-			>
-		</li>
-		<li>
-			<a
-				href="https://www.linkedin.com/in/moouro/"
-				target="_blank"
-				class="transition-colors duration-200 hover:text-amber-500"
-				aria-label="LinkedIn">LinkedIn</a
-			>
-		</li>
+	<ul role="list" class="flex flex-wrap items-center gap-4 text-sm">
+		{
+			socialLinks.map((link) => (
+				<li>
+					{link.icon ? (
+						<a
+							href={link.href}
+							class="flex items-center justify-center rounded-md bg-zinc-800 p-2 transition-transform duration-200 hover:scale-105 hover:text-amber-500"
+							aria-label={link.ariaLabel}
+							target={link.target || null}
+						>
+							<Icon name={`${link.icon}`} size="24" />
+						</a>
+					) : (
+						<a
+							href={link.href}
+							class="rounded-md bg-zinc-800 p-2 transition-transform duration-200 hover:scale-105 hover:text-amber-500"
+							aria-label={link.ariaLabel}
+						>
+							{link.name}
+						</a>
+					)}
+				</li>
+			))
+		}
 	</ul>
 </div>
